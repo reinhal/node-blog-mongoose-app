@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: ALX1EhvG7mOXAvS49yaa3Ya2GfSuv2silB5O7cwGt+d1qMAtrI374u98AdDZPRM+HAl//ibpMqbpL7QtxGWCQ7V8J8WIz4U/OJRdOGN/Ns6+eaDEaZzxGKx1Mbp/tn/QarfezV9Ytc0D2kukH8KQMpoMvxHKzXkrvRCSqvUqc+sAny6uN8zzIE3N7ltiF/4f+EJyQ9ss1AcbTQPXiqLstSVw479Yq69skcrmuM0MDxpIqQtYzL/ukmWgy0nVlnxAeuPFxQxa8SAuqDL0hzhbt3/ubNsDySurRPPaE7AZti8jNBCiyRcyBSXl4gkEexKes+UPmAR3rtxi7SbJH/6E87L9JMgUvTPSaz71WLmAulujOWKTWmQ67dCk84W/OlmnKdzfFKroZz+Xa2EDNhJjua9Sf8WQReWCkzqGf2Nbbb/SkxtzoDf5McGwu7bccGGjf+ygneK62skYAj4giv57zIyfkL0dy5Fc7zBL0ZzS/6jng3XtniLcbdEpmR/8vn5VksQ/elLACvlDxSjMD/LmJ+yR7+x7fjUp7TmFCF6jGKnvr0zYY5Pyn2iKeCSWSoB8pe3xjNhnzHFJyz5qGAj7YSDc2oZrPNDxuuPWoU+DymVzOFfy+AA5jV+ez0znHMfc1xRtSoPYpk1bM1X5nJBGsM7KO1c2XcXKm9nRkLHD3rM=
+  app: rocky-badlands-81724
+  on:
+    repo: reinhal/node-blog-mongoose-app
