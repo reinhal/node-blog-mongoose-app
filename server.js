@@ -1,13 +1,9 @@
+'use strict';
+
 const express = require('express');
-const router = express.Router();
-
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
-
 const {PORT, DATABASE_URL} = require('./config');
 const {BlogPosts} = require('./models');
-
-const jsonParser = bodyParser.json();
 const app = express();
 
 const mongoose = require('mongoose');
@@ -88,7 +84,7 @@ app.use('*', function(req, res) {
 
 let server;
 
-function runServer(databaseUrl, port=PORT) {
+function runServer(databaseUrl = DATABASE_URL, port = PORT) {
     return new Promise((resolve, reject) => {
         mongoose.connect(databaseUrl, err => {
             if (err) {

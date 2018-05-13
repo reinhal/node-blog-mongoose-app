@@ -8,7 +8,7 @@ const blogSchema = mongoose.Schema({
   content: {type: String},
   author: {
     firstName: String,
-    lasName: String
+    lastName: String
   },
   created: {type: Date, default: Date.now},
 });
