@@ -55,8 +55,9 @@ app.post('/blog-posts', jsonParser, (req, res) => {
             return res.status(400).send(message);
         }
     }
-    const item = BlogPosts.create(req.body.title, req.body.content, req.body.author, req.body.publishDate);
-        res.status(201).json(item);
+
+const item = BlogPosts.create(req.body.title, req.body.content, req.body.author, req.body.publishDate);
+    res.status(201).json(item);
 });
 
 app.put('/blog-posts/:id', jsonParser, (req, res) => {
@@ -90,4 +91,4 @@ app.delete('/blog-posts/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
     console.log(`Deleted blog post \`${req.params.ID}\``);
     res.status(204).end();
-});
+});})}
