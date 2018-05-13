@@ -38,7 +38,16 @@ function closeServer() {
                 return;
             }
             resolve();
-        });git
+        });
+    });
+}
+
+if (require.main === module) {
+    runServer().catch(err => console.error(err));
+};
+
+module.exports = {app, runServer, closeServer};
+
 BlogPosts.create('Mauris Dictum Facilisis Augue', `'Donec iaculis gravida nulla. Etiam ligula pede, sagittis 
 	quis, interdum ultricies, scelerisque eu. Aenean vel massa quis mauris vehicula lacinia. Mauris 
 	tincidunt sem sed arcu. Mauris dictum facilisis augue. Donec iaculis gravida nulla. Cum sociis natoque 
@@ -91,4 +100,4 @@ app.delete('/blog-posts/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
     console.log(`Deleted blog post \`${req.params.ID}\``);
     res.status(204).end();
-});})}
+});
