@@ -38,30 +38,7 @@ function closeServer() {
                 return;
             }
             resolve();
-        });
-    });
-}
-
-if (require.main === module) {
-    runServer().catch(err => console.error(err));
-};
-
-module.exports = {app, runServer, closeServer};
-
-BlogPosts.create('Lorem Ipsum Dolor Sit Amet', `'Consectetuer adipiscing elit. Sed ac dolor sit amet 
-	purus malesuada congue. Curabitur vitae diam non enim vestibulum interdum. Aliquam ante. Aliquam 
-	erat volutpat. Nam sed tellus id magna elementum tincidunt. Ut enim ad minim veniam, quis nostrud 
-	exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nulla quis diam. Maecenas 
-	ipsum velit, consectetuer eu lobortis ut, dictum at dui. Aliquam erat volutpat. In sem justo, 
-	commodo ut, suscipit at, pharetra vitae, orci. Mauris tincidunt sem sed arcu. Class aptent taciti 
-	sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.'`, 'Author One', 'March 16, 2018');
-BlogPosts.create('In Dapibus Augue Non Sapien', `'Morbi leo mi, nonummy eget tristique non, rhoncus non leo. 
-	Cras pede libero, dapibus nec, pretium sit amet, tempor quis. Nulla est. Lorem ipsum dolor sit amet, 
-	consectetuer adipiscing elit. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-	voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. In dapibus augue 
-	non sapien. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit 
-	diam nulla vel leo. Integer malesuada. Nullam at arcu a est sollicitudin euismod. Integer pellentesque 
-	quam vel velit. Mauris metus. Fusce suscipit libero eget elit. Cras elementum.'`, 'Author Two', 'February 23, 2018');
+        });git
 BlogPosts.create('Mauris Dictum Facilisis Augue', `'Donec iaculis gravida nulla. Etiam ligula pede, sagittis 
 	quis, interdum ultricies, scelerisque eu. Aenean vel massa quis mauris vehicula lacinia. Mauris 
 	tincidunt sem sed arcu. Mauris dictum facilisis augue. Donec iaculis gravida nulla. Cum sociis natoque 
@@ -109,7 +86,7 @@ app.put('/blog-posts/:id', jsonParser, (req, res) => {
       res.status(204).end();
 });
 
-app.delete(`/blog-posts/:id`, (req, res) => {
+app.delete('/blog-posts/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
     console.log(`Deleted blog post \`${req.params.ID}\``);
     res.status(204).end();
